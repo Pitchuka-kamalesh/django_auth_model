@@ -8,7 +8,7 @@ def signup_page(request):
     form = RegisterForm()
     if request.method == "POST":
         form = RegisterForm(request.POST)
-        if user.is_valid():
+        if form.is_valid():
             form.save()
             return redirect('login')
     data = {'form':form}
